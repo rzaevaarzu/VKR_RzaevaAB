@@ -6,39 +6,48 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.vkr_rzaevaab.databinding.FragmentSecondBinding
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.vkr_rzaevaab.api.adapters.EventAdapter
+import com.example.vkr_rzaevaab.databinding.FragmentEventListBinding
+import com.example.vkr_rzaevaab.entities.Event
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
 class EventListFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: EventAdapter
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
+    private var _binding: FragmentEventListBinding? = null
+    private val binding: FragmentEventListBinding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_event_list, container, false)
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
-        return binding.root
+        // Найти RecyclerView
+        recyclerView = view.findViewById(R.id.eventList)
 
-    }
+        // Пример списка
+        val items = listOf(
+            Event("ГОЙДА", "ДАТА ГОЙДЫ", "ВРЕМЯ ГОЙДЫ"),
+            Event("ГОЙДА", "ДАТА ГОЙДЫ", "ВРЕМЯ ГОЙДЫ"),
+            Event("ГОЙДА", "ДАТА ГОЙДЫ", "ВРЕМЯ ГОЙДЫ"),
+            Event("ГОЙДА", "ДАТА ГОЙДЫ", "ВРЕМЯ ГОЙДЫ"),
+            Event("ГОЙДА", "ДАТА ГОЙДЫ", "ВРЕМЯ ГОЙДЫ"),
+            Event("ГОЙДА", "ДАТА ГОЙДЫ", "ВРЕМЯ ГОЙДЫ")
+        )
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        // Настройка RecyclerView
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 1)
+        recyclerView.addItemDecoration(SpacingItemDecoration(4))
+        recyclerView.adapter = EventAdapter(items)
 
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-        }
-    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        return view
     }
 }

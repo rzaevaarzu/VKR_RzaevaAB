@@ -12,8 +12,4 @@
         <item name="closeIcon">@drawable/user</item>
         <item name="queryBackground">@android:color/transparent</item>
     </style>
-
-    <style name="BottomNavStyle" parent="Widget.MaterialComponents.BottomNavigationView">
-        <item name="itemIconSize">30dp</item> <!-- любой нужный размер -->
-    </style>
 </resources>
