@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:gravity="left"
+    android:background="@drawable/device_item_background">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Название"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/date_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:text="Дата: "
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toEndOf="@+id/date_space"
+        android:text="01.09.2001"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/time_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:text="Время: "
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:text="22:22"
+        android:layout_toEndOf="@+id/time_space"
+        android:textColor="#000"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

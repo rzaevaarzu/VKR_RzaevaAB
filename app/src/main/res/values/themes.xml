@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.VKR_RzaevaAB" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.VKR_RzaevaAB" parent="Base.Theme.VKR_RzaevaAB" />
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="searchIcon">@drawable/user</item>
+        <item name="closeIcon">@drawable/user</item>
+        <item name="queryBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="BottomNavStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemIconSize">30dp</item> <!-- любой нужный размер -->
+    </style>
+</resources>
