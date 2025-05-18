@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/homeFragment"
+    android:background="@color/black"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:id="@+id/homeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Главная"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="@color/lightGrey"
+        android:layout_alignParentTop="true"
+        android:background="@color/darkGrey"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА
+ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА
+ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА
+ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА
+ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА
+ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА
+ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА
+ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА
+ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА ГОЙДА"
+        android:textSize="20dp"
+        android:layout_below="@+id/homeTitle"
+        android:layout_marginBottom="5dp"
+        android:background="@color/white"/>
+
+</RelativeLayout>

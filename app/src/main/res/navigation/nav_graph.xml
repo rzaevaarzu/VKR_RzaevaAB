@@ -3,26 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
-
+    app:startDestination="@id/homeFragment">
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/deviceListFragment"
         android:name="com.example.vkr_rzaevaab.DeviceListFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_device_list">
-
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
+        android:label="fragment_device_list"
+        tools:layout="@layout/fragment_device_list" />
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/eventListFragment"
         android:name="com.example.vkr_rzaevaab.EventListFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_event_list">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
+        android:label="fragment_event_list"
+        tools:layout="@layout/fragment_event_list" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.vkr_rzaevaab.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.vkr_rzaevaab.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>
