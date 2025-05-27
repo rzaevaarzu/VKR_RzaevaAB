@@ -5,42 +5,53 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.LifecycleOwner
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
+import com.example.vkr_rzaevaab.api.viewmodels.DeviceViewModel
+import com.example.vkr_rzaevaab.databinding.FragmentDeviceListBinding
+import com.example.vkr_rzaevaab.entities.Device
 
 
 class DeviceListFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: DeviceAdapter
 
+
+    private var _binding: FragmentDeviceListBinding? = null
+    private val binding: FragmentDeviceListBinding get() = _binding!!
+
+    private val deviceViewModel: DeviceViewModel by viewModels()
+    private var gList = listOf<Device>()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_device_list, container, false)
 
-        // Найти RecyclerView
-        recyclerView = view.findViewById(R.id.device_list)
+        _binding = FragmentDeviceListBinding.inflate(inflater, container, false)
 
-        // Пример списка
-        val items = listOf(
-            DeviceItem(R.drawable.device, "Монитор 1"),
-            DeviceItem(R.drawable.device, "Монитор 2"),
-            DeviceItem(R.drawable.device, "Монитор 3"),
-            DeviceItem(R.drawable.device, "Монитор 3"),
-            DeviceItem(R.drawable.device, "Монитор 3"),
-            DeviceItem(R.drawable.device, "Монитор 3"),
-            DeviceItem(R.drawable.device, "Монитор 3"),
-            DeviceItem(R.drawable.device, "Монитор 3"),
-            DeviceItem(R.drawable.device, "Монитор 4")
-        )
+        deviceViewModel.getAllDevices()
 
-        // Настройка RecyclerView
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        recyclerView.addItemDecoration(SpacingItemDecoration(4))
-        recyclerView.adapter = DeviceAdapter(items)
+        binding.deviceList.layoutManager = GridLayoutManager(requireContext(), 2)
+        binding.deviceList.addItemDecoration(SpacingItemDecoration(4))
+        val navController = findNavController()
+        deviceViewModel.deviceList.observe(this as LifecycleOwner){ it ->
+            adapter = deviceViewModel.createAdapter(it)
+            gList = it
+            binding.deviceList.adapter = adapter
+            adapter!!.onItemClick = {
+                val bundle = Bundle()
+                bundle.putParcelable("device", it)
+                navController.navigate(
+                    R.id.action_deviceListFragment_to_devicePageFragment,
+                    bundle
+                )
+            }
+        }
 
-        return view
+        return binding.root
     }
 }

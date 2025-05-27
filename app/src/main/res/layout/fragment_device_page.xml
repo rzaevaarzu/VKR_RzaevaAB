@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DevicePageFragment"
+    android:background="@color/black">
+
+        <TextView
+            android:id="@+id/device_page_title"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Устройство"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/lightGrey"
+            android:layout_alignParentTop="true"
+            android:background="@color/darkGrey"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/device_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="Название устройства"
+            android:textAlignment="center"
+            android:textColor="@color/lightGrey"
+            android:textSize="25dp"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/device_page_title"/>
+
+        <!-- Список характеристик устройства -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <!-- Первая пара характеристик -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="150dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Процессор"
+                    android:textSize="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/lightGrey" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="150dp"
+                    android:text="Монитор"
+                    android:textSize="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/lightGrey"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/cpu"
+                    android:layout_marginStart="50dp"/>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/monitor"
+                    android:layout_marginStart="105dp"/>
+            </LinearLayout>
+
+            <!-- Значения первой пары -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/cpu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="XXXXXXXX"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/lightGrey"/>
+
+                <TextView
+                    android:id="@+id/monitor"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="XXXXXXXX"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/lightGrey"/>
+            </LinearLayout>
+
+            <!-- Вторая пара характеристик -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Операт. память"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/lightGrey"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Видеокарта"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/lightGrey"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp"                >
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ram"
+                    android:layout_marginStart="50dp"/>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/vc"
+                    android:layout_marginStart="105dp" />
+            </LinearLayout>
+
+            <!-- Значения второй пары -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ram"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="XXXXXXXX"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/lightGrey"/>
+
+                <TextView
+                    android:id="@+id/videocard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="XXXXXXXX"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/lightGrey"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+    <Button
+        android:id="@+id/device_reserv_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Забронировать"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:layout_marginBottom="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"/>
+
+
+</RelativeLayout>

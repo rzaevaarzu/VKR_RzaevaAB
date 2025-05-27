@@ -4,17 +4,21 @@
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/home_page"
-        android:title="" />
+        android:title="Домашняя страница"
+        android:checkable="true" />
     <item
         android:id="@+id/deviceListFragment"
         android:icon="@drawable/computer"
-        android:title=""/>
+        android:title="Устройства"
+        android:checkable="true"/>
     <item
         android:id="@+id/eventListFragment"
         android:icon="@drawable/calendar"
-        android:title=""/>
+        android:title="Мероприятия"
+        android:checkable="true"/>
     <item
         android:id="@+id/profileFragment"
         android:icon="@drawable/user"
-        android:title=""/>
+        android:title="Профиль"
+        android:checkable="true"/>
 </menu>

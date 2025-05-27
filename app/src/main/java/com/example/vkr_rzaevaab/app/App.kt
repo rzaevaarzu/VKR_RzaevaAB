@@ -23,7 +23,7 @@ class App : Application(){
         super.onCreate()
 
         retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.25.253:8080/api/")
+            .baseUrl("http://192.168.110.23:8080/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 

@@ -7,10 +7,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vkr_rzaevaab.R
+import com.example.vkr_rzaevaab.entities.Device
 import com.example.vkr_rzaevaab.entities.Event
+import com.example.vkr_rzaevaab.entities.EventItem
 
 class EventAdapter(private val events: List<Event>) :
     RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+
+    var onItemClick : ((Event) -> Unit)? = null
+
 
     class EventViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.title)
@@ -29,6 +34,9 @@ class EventAdapter(private val events: List<Event>) :
         holder.title.text = event.name
         holder.date.text = event.date
         holder.time.text = event.time
+        holder.itemView.setOnClickListener{
+            onItemClick?.invoke(event)
+        }
     }
 
     override fun getItemCount(): Int = events.size

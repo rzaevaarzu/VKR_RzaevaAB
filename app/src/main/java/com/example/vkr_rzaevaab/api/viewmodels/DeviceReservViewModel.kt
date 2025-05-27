@@ -1,5 +1,6 @@
 package com.example.vkr_rzaevaab.api.viewmodels
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.vkr_rzaevaab.api.Api
@@ -15,6 +16,7 @@ class DeviceReservViewModel : ViewModel() {
     val deviceReservList = MutableLiveData<List<DeviceReservation>>()
     val deviceReserv = MutableLiveData<DeviceReservation>()
     val projectApi = App.retrofit.create(Api::class.java)
+
 
     fun createDeviceReserv(deviceReservation: DeviceReservation) {
         CoroutineScope(Dispatchers.IO).launch {
@@ -56,6 +58,15 @@ class DeviceReservViewModel : ViewModel() {
     fun getDeviceReservByDeviceId(deviceId: Int){
         CoroutineScope(Dispatchers.IO).launch {
             val temp = projectApi.getDeviceReservByDeviceId(deviceId)
+            withContext(Dispatchers.Main){
+                deviceReservList.value = temp
+            }
+        }
+    }
+
+    fun getDeviceReservByDeviceIdAndDate(deviceId: Int, date: String){
+        CoroutineScope(Dispatchers.IO).launch {
+            val temp = projectApi.getDeviceReservByDeviceIdAndDate(deviceId, date)
             withContext(Dispatchers.Main){
                 deviceReservList.value = temp
             }
