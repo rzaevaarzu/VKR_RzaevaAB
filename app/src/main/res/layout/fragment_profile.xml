@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="2dp"
     android:orientation="vertical"
     android:id="@+id/profileFragment"
     android:background="@color/black"
@@ -21,28 +20,34 @@
         android:background="@color/darkGrey"/>
 
     <Button
+        android:id="@+id/exit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/profileTitle"
         android:layout_alignEnd="@+id/profileTitle"
         android:layout_margin="10dp"
         android:text="Выйти"
+        android:textSize="18dp"
+        android:textColor="@color/black"
         />
     <Button
+        android:id="@+id/edit_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/profileTitle"
         android:layout_below="@+id/profileTitle"
         android:text="Изменить"
+        android:textSize="18dp"
+        android:textColor="@color/black"
         android:layout_margin="10dp"
         />
 
 
     <ImageView
-        android:id="@+id/profileImage"
+        android:id="@+id/profile_image"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/comp_club"
+        android:src="@drawable/profile"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/profileTitle"
         android:layout_marginTop="70dp"/>
@@ -50,54 +55,92 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/userName"
-        android:layout_below="@id/profileImage"
+        android:id="@+id/fio"
+        android:layout_below="@id/profile_image"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:layout_marginStart="5dp"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/purple"
         android:textSize="30dp"
-        android:text="Рзаева Арзу Байрам кызы (ЧМОНЯ)"
+        android:text="Фамилия Имя Отчество"
         />
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/userBirthDay"
-        android:layout_below="@id/userName"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginStart="5dp"
-        android:textColor="@color/white"
+        android:id="@+id/birthdate_title"
+        android:layout_below="@id/fio"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/lightGrey"
         android:textSize="20dp"
-        android:text="Дата рождения: 17.10.2003"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/userPhoneNumber"
-        android:layout_below="@id/userBirthDay"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginStart="5dp"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        android:text="Телефон: +7 777 777 77 77"
+        android:text="Дата рождения: "
         />
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/birthdate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/userEmail"
-        android:layout_below="@id/userPhoneNumber"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginStart="5dp"
-        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_below="@id/fio"
+        android:layout_toEndOf="@+id/birthdate_title"
+        android:text="17.10.2003"
+        android:textColor="@color/lightGrey"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/telephone_title"
+        android:layout_below="@id/birthdate_title"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/lightGrey"
         android:textSize="20dp"
-        android:text="Почта: chmonya@gmail.com"
+        android:text="Телефон: "
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/telephone"
+        android:layout_below="@id/birthdate_title"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@id/telephone_title"
+        android:textColor="@color/lightGrey"
+        android:textSize="20dp"
+        android:text="+7 777 777 77 77"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/email_title"
+        android:layout_below="@id/telephone_title"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/lightGrey"
+        android:textSize="20dp"
+        android:text="Почта: "
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:layout_below="@id/telephone_title"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:layout_toEndOf="@id/email_title"
+        android:textColor="@color/lightGrey"
+        android:textSize="20dp"
+        android:text="abc@gmail.com"
+        />
 
 </RelativeLayout>

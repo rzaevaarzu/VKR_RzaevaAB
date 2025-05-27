@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddDeviceReservFragment"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddDeviceReservFragment">
+
+        <TextView
+            android:id="@+id/device_reserv_title"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Бронирование"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:textColor="@color/lightGrey"
+            android:layout_alignParentTop="true"
+            android:background="@color/darkGrey"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/device_name_title"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            android:text="Название: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/device_reserv_title"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="5dp"
+            android:text="TextView"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@id/device_name_title"
+            app:layout_constraintTop_toBottomOf="@id/device_reserv_title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/device_cpu_title"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            android:text="Процессор: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/device_name_title"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/device_cpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="TextView"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@id/device_cpu_title"
+            app:layout_constraintTop_toBottomOf="@id/device_name_title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/device_ram_title"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            android:text="Опер.память: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/device_cpu_title"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/device_ram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="TextView"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@id/device_ram_title"
+            app:layout_constraintTop_toBottomOf="@id/device_cpu_title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/device_monitor_title"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            android:text="Монитор: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/device_ram_title"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/device_monitor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="TextView"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@id/device_monitor_title"
+            app:layout_constraintTop_toBottomOf="@id/device_ram_title"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/device_videocard_title"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            android:text="Видеокарта: "
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/device_monitor_title"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/device_videocard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="TextView"
+            android:textColor="@color/lightGrey"
+            android:textSize="17dp"
+            app:layout_constraintStart_toEndOf="@id/device_videocard_title"
+            app:layout_constraintTop_toBottomOf="@id/device_monitor_title"/>
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="20dp"
+            android:focusedMonthDateColor="@color/purple"
+            android:background="@color/lightGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/device_videocard_title" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/time_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/calendarView"
+            app:layout_constraintTop_toBottomOf="@id/calendarView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            tools:listitem="@layout/time_item" />
+
+        <Button
+            android:id="@+id/addDeviceReserv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Выбрать"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/time_list" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

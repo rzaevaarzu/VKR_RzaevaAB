@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.vkr_rzaevaab.api.Api
 import com.example.vkr_rzaevaab.app.App
 import com.example.vkr_rzaevaab.entities.DeviceReservation
+import com.example.vkr_rzaevaab.entities.EventRegistration
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -12,12 +13,12 @@ import kotlinx.coroutines.withContext
 
 class EventRegistrViewModel : ViewModel() {
 
-    val eventRegList = MutableLiveData<List<DeviceReservation>>()
-    val eventReg = MutableLiveData<DeviceReservation>()
+    val eventRegList = MutableLiveData<List<EventRegistration>>()
+    val eventReg = MutableLiveData<EventRegistration>()
     val count = MutableLiveData<Int>()
     val projectApi = App.retrofit.create(Api::class.java)
 
-    fun createEventReg(eventRegistration: DeviceReservation) {
+    fun createEventReg(eventRegistration: EventRegistration) {
         CoroutineScope(Dispatchers.IO).launch {
             projectApi.createEventRegistr(eventRegistration)
             withContext(Dispatchers.Main){

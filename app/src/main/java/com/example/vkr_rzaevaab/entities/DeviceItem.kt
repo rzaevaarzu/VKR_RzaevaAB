@@ -1,4 +1,4 @@
-package com.example.vkr_rzaevaab
+package com.example.vkr_rzaevaab.entities
 
 data class DeviceItem(
     val iconResId: Int,

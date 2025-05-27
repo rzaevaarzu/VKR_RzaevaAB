@@ -6,10 +6,14 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.vkr_rzaevaab.entities.Device
+import com.example.vkr_rzaevaab.entities.DeviceItem
 
 class DeviceAdapter(
-    private val items: List<DeviceItem>
+    private val items: List<Device>
 ) : RecyclerView.Adapter<DeviceAdapter.DeviceViewHolder>() {
+
+    var onItemClick : ((Device) -> Unit)? = null
 
     class DeviceViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val icon: ImageView = itemView.findViewById(R.id.icon)
@@ -24,8 +28,11 @@ class DeviceAdapter(
 
     override fun onBindViewHolder(holder: DeviceViewHolder, position: Int) {
         val item = items[position]
-        holder.icon.setImageResource(item.iconResId)
-        holder.title.text = item.title
+        holder.icon
+        holder.title.text = item.name
+        holder.itemView.setOnClickListener{
+            onItemClick?.invoke(item)
+        }
     }
 
     override fun getItemCount(): Int = items.size

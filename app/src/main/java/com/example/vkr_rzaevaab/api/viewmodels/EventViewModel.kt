@@ -2,8 +2,11 @@ package com.example.vkr_rzaevaab.api.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.vkr_rzaevaab.DeviceAdapter
 import com.example.vkr_rzaevaab.api.Api
+import com.example.vkr_rzaevaab.api.adapters.EventAdapter
 import com.example.vkr_rzaevaab.app.App
+import com.example.vkr_rzaevaab.entities.Device
 import com.example.vkr_rzaevaab.entities.Event
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -51,6 +54,10 @@ class EventViewModel : ViewModel() {
                 event.value = temp
             }
         }
+    }
+
+    fun createAdapter(events: List<Event>) : EventAdapter {
+        return EventAdapter(events)
     }
 
 }
